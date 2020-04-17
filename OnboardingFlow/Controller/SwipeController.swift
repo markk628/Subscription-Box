@@ -12,10 +12,12 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     var collectionView : UICollectionView!
         
+    var nextIndex: Int!
+        
     let pages = [
-        Page(imageName: "BBQ", headerText: "Crack open a cold one and fire up the grill"),
-        Page(imageName: "games", headerText: "Be toxic and play games with your significant other"),
-        Page(imageName: "percs", headerText: "Most importantly stay medicated and elevated"),
+        Page(imageName: "BBQ", headerText: "Crack open a cold one and fire up the grill", isLastPage: false),
+        Page(imageName: "games", headerText: "Be toxic and play games with your significant other", isLastPage: false),
+        Page(imageName: "percs", headerText: "Most importantly stay medicated and elevated", isLastPage: true),
     ]
     
     lazy var pageControl: UIPageControl = {
@@ -26,10 +28,11 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         pc.pageIndicatorTintColor = .purple
         return pc
     }()
-    
+        
     fileprivate func setupBottomControls() {
         let bottomControls = UIView()
         view.addSubview(bottomControls)
+
         bottomControls.addSubview(pageControl)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false
 
@@ -37,7 +40,7 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
             bottomControls.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             bottomControls.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            bottomControls.heightAnchor.constraint(equalToConstant: 50)
+            bottomControls.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -63,7 +66,6 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         self.view.addSubview(collectionView)
         
         setupBottomControls()
-        
     }
     
 }

@@ -6,10 +6,12 @@
 //  Copyright © 2020 Mark Kim. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Page {
     
     let imageName: String
     let headerText: String
+    let isLastPage: Bool
+    
 }

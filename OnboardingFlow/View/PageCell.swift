@@ -17,6 +17,8 @@ class PageCell: UICollectionViewCell {
             let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
             descriptionTextView.attributedText = attributedText
             descriptionTextView.textAlignment = .center
+            continueButton.isHidden = !page!.isLastPage
+        
         }
     }
     
@@ -38,6 +40,15 @@ class PageCell: UICollectionViewCell {
         return textView
     }()
     
+    private let continueButton: UIButton = {
+        let cButton = UIButton()
+        cButton.backgroundColor = .white
+        cButton.setTitle("Continue", for: UIControl.State.normal)
+        cButton.setTitleColor(.blue, for: UIControl.State.normal)
+        cButton.translatesAutoresizingMaskIntoConstraints = false
+        return cButton
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -47,6 +58,7 @@ class PageCell: UICollectionViewCell {
         let topImageContainerView = UIView()
         addSubview(topImageContainerView)
         addSubview(descriptionTextView)
+        addSubview(continueButton)
         topImageContainerView.addSubview(bbqImageView)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -63,11 +75,20 @@ class PageCell: UICollectionViewCell {
             descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor),
             descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
             descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
-            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            
+            continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150),
+            continueButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            continueButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        continueButton.isHidden = true
     }
 }
