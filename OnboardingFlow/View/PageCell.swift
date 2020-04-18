@@ -18,7 +18,6 @@ class PageCell: UICollectionViewCell {
             descriptionTextView.attributedText = attributedText
             descriptionTextView.textAlignment = .center
             continueButton.isHidden = !page!.isLastPage
-        
         }
     }
     
@@ -40,7 +39,7 @@ class PageCell: UICollectionViewCell {
         return textView
     }()
     
-    private let continueButton: UIButton = {
+    let continueButton: UIButton = {
         let cButton = UIButton()
         cButton.backgroundColor = .white
         cButton.setTitle("Continue", for: UIControl.State.normal)
@@ -58,7 +57,6 @@ class PageCell: UICollectionViewCell {
         let topImageContainerView = UIView()
         addSubview(topImageContainerView)
         addSubview(descriptionTextView)
-        continueButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
         addSubview(continueButton)
         topImageContainerView.addSubview(bbqImageView)
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,10 +81,6 @@ class PageCell: UICollectionViewCell {
             continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
             continueButton.heightAnchor.constraint(equalToConstant: 100)
         ])
-    }
-    
-    @objc func buttonTapped() {
-        print("Hello")
     }
     
     required init?(coder aDecoder: NSCoder) {

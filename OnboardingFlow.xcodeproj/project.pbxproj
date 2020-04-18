@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE8FF154244A59D400D4298E /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */; };
 		FEAF250E243E91EF00355BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250D243E91EF00355BC4 /* AppDelegate.swift */; };
 		FEAF2510243E91EF00355BC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */; };
 		FEAF2517243E91F200355BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAF2516243E91F200355BC4 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
 		FEAF250A243E91EF00355BC4 /* OnboardingFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAF250D243E91EF00355BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				FEAF252B243F1CD500355BC4 /* SwipeControllerCollectoinView.swift */,
 				FEB14AE52446372700587085 /* HomeViewController.swift */,
 				FEB14AE72446374100587085 /* LoginViewController.swift */,
+				FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB14AE82446374100587085 /* LoginViewController.swift in Sources */,
+				FE8FF154244A59D400D4298E /* NavigationControllerExtension.swift in Sources */,
 				FEAF2524243F08F100355BC4 /* SwipeController.swift in Sources */,
 				FEAF252C243F1CD500355BC4 /* SwipeControllerCollectoinView.swift in Sources */,
 				FEAF252A243F1CB700355BC4 /* SwipeControllerExtension.swift in Sources */,
