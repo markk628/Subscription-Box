@@ -62,8 +62,8 @@ class LogInViewController: UIViewController {
     }()
     
     @objc func logInButtonTapped() {
-//        let nextVc = LogInViewController()
-//        self.navigationController?.initRootViewController(vc: nextVc)
+        let nextVc = HomeViewController()
+        self.navigationController?.initRootViewController(vc: nextVc)
         print("hello")
     }
 
