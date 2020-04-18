@@ -23,7 +23,7 @@ extension SwipeController: UICollectionViewDelegate, UICollectionViewDataSource 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
         let page = pages[indexPath.item]
         cell.page = page
-        cell.continueButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
+        cell.continueButton.addTarget(self, action: #selector(self.continueButtonTapped), for: .touchUpInside)
         return cell
     }
     

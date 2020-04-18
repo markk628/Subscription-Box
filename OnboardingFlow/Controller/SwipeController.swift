@@ -47,7 +47,7 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         pageControl.currentPage = Int(x / view.frame.width)
     }
     
-    @objc func buttonTapped() {
+    @objc func continueButtonTapped() {
         let nextVc = LogInViewController()
         self.navigationController?.initRootViewController(vc: nextVc)
     }
