@@ -11,9 +11,7 @@ import UIKit
 class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     var collectionView : UICollectionView!
-        
-    var nextIndex: Int!
-        
+                
     let pages = [
         Page(imageName: "BBQ", headerText: "Crack open a cold one and fire up the grill", isLastPage: false),
         Page(imageName: "games", headerText: "Be toxic and play games with your significant other", isLastPage: false),
@@ -24,8 +22,8 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = pages.count
-        pc.currentPageIndicatorTintColor = .blue
-        pc.pageIndicatorTintColor = .purple
+        pc.currentPageIndicatorTintColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
+        pc.pageIndicatorTintColor = UIColor(red: 0/255, green: 93/255, blue: 94/255, alpha: 1.0)
         return pc
     }()
         
@@ -50,10 +48,8 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
     }
     
     @objc func buttonTapped() {
-        print("button pressed")
         let nextVc = LogInViewController()
         self.navigationController?.initRootViewController(vc: nextVc)
-        
     }
     
     override func viewDidLoad() {
@@ -76,27 +72,3 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: CollectionViewDelegate & Datasource
-extension SwipeController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
-        let page = pages[indexPath.item]
-        cell.page = page
-        cell.continueButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-}

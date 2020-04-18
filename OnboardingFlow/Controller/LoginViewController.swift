@@ -15,25 +15,41 @@ class LogInViewController: UIViewController {
         let nameLabel = UILabel()
         let attributedText = NSAttributedString(string: "Quarantined", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)])
         nameLabel.attributedText = attributedText
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.textColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
         nameLabel.textAlignment = .center
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameLabel
     }()
     
     private let appImage: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "socialDistancing.png"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let appDescriptionLabel: UILabel = {
         let describtionLabel = UILabel()
-        let attributedText = NSAttributedString(string: "Social Distancing Done Right", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
+        let attributedText = NSAttributedString(string: "Essentials delivered", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
         describtionLabel.attributedText = attributedText
-        describtionLabel.translatesAutoresizingMaskIntoConstraints = false
+        describtionLabel.textColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
         describtionLabel.textAlignment = .center
+        describtionLabel.translatesAutoresizingMaskIntoConstraints = false
         return describtionLabel
+    }()
+    
+    private let userNameTextField: UITextField = {
+        let userName = UITextField()
+        userName.placeholder = "username"
+        userName.translatesAutoresizingMaskIntoConstraints = false
+        return userName
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let password = UITextField()
+        password.placeholder = "password"
+        password.translatesAutoresizingMaskIntoConstraints = false
+        return password
     }()
 
     override func viewDidLoad() {
@@ -47,11 +63,13 @@ class LogInViewController: UIViewController {
         view.addSubview(appNameLabel)
         view.addSubview(imageContainerView)
         view.addSubview(appDescriptionLabel)
+        view.addSubview(userNameTextField)
+        view.addSubview(passwordTextField)
         imageContainerView.addSubview(appImage)
         imageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            appNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            appNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             appNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -50),
             appNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 50),
             appNameLabel.heightAnchor.constraint(equalToConstant: 80),
@@ -66,9 +84,21 @@ class LogInViewController: UIViewController {
             appImage.heightAnchor.constraint(equalTo: imageContainerView.heightAnchor, multiplier: 0.5),
             
             appDescriptionLabel.topAnchor.constraint(equalTo: imageContainerView.bottomAnchor),
-            appDescriptionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
-            appDescriptionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
-            appDescriptionLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            appDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -24),
+            appDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 24),
+            appDescriptionLabel.heightAnchor.constraint(equalToConstant: 80),
+            
+            userNameTextField.topAnchor.constraint(equalTo: appDescriptionLabel.bottomAnchor),
+            userNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            userNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            userNameTextField.heightAnchor.constraint(equalToConstant: 50),
+            
+            passwordTextField.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 15),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50)
+            
+            
         ])
     }
 }

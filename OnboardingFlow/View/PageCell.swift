@@ -17,6 +17,7 @@ class PageCell: UICollectionViewCell {
             let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
             descriptionTextView.attributedText = attributedText
             descriptionTextView.textAlignment = .center
+            descriptionTextView.textColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
             continueButton.isHidden = !page!.isLastPage
         }
     }
@@ -43,7 +44,7 @@ class PageCell: UICollectionViewCell {
         let cButton = UIButton()
         cButton.backgroundColor = .white
         cButton.setTitle("Continue", for: UIControl.State.normal)
-        cButton.setTitleColor(.blue, for: UIControl.State.normal)
+        cButton.setTitleColor(UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0), for: UIControl.State.normal)
         cButton.translatesAutoresizingMaskIntoConstraints = false
         return cButton
     }()
