@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE5E470C244C199400D67295 /* PastBoxesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470B244C199400D67295 /* PastBoxesCell.swift */; };
+		FE5E470E244C1B5100D67295 /* HomeVCTableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */; };
 		FE8FF154244A59D400D4298E /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */; };
 		FEAF250E243E91EF00355BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250D243E91EF00355BC4 /* AppDelegate.swift */; };
 		FEAF2510243E91EF00355BC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE5E470B244C199400D67295 /* PastBoxesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesCell.swift; sourceTree = "<group>"; };
+		FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCellExtension.swift; sourceTree = "<group>"; };
 		FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
 		FEAF250A243E91EF00355BC4 /* OnboardingFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAF250D243E91EF00355BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FEAF2525243F0DAA00355BC4 /* PageCell.swift */,
+				FE5E470B244C199400D67295 /* PastBoxesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -71,8 +76,9 @@
 				FEAF2523243F08F100355BC4 /* SwipeController.swift */,
 				FEAF2529243F1CB700355BC4 /* SwipeControllerExtension.swift */,
 				FEAF252B243F1CD500355BC4 /* SwipeControllerCollectoinView.swift */,
-				FEB14AE52446372700587085 /* HomeViewController.swift */,
 				FEB14AE72446374100587085 /* LoginViewController.swift */,
+				FEB14AE52446372700587085 /* HomeViewController.swift */,
+				FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */,
 				FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */,
 			);
 			path = Controller;
@@ -185,10 +191,12 @@
 				FEAF252C243F1CD500355BC4 /* SwipeControllerCollectoinView.swift in Sources */,
 				FEAF252A243F1CB700355BC4 /* SwipeControllerExtension.swift in Sources */,
 				FEB14AE62446372700587085 /* HomeViewController.swift in Sources */,
+				FE5E470C244C199400D67295 /* PastBoxesCell.swift in Sources */,
 				FEAF2526243F0DAA00355BC4 /* PageCell.swift in Sources */,
 				FEAF2528243F1C9A00355BC4 /* Page.swift in Sources */,
 				FEAF250E243E91EF00355BC4 /* AppDelegate.swift in Sources */,
 				FEAF2510243E91EF00355BC4 /* SceneDelegate.swift in Sources */,
+				FE5E470E244C1B5100D67295 /* HomeVCTableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

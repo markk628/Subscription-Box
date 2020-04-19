@@ -42,9 +42,9 @@ class PageCell: UICollectionViewCell {
     
     let continueButton: UIButton = {
         let cButton = UIButton()
-        cButton.backgroundColor = UIColor(red: 0/255, green: 93/255, blue: 94/255, alpha: 1.0)
+        cButton.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
         cButton.setTitle("Continue", for: UIControl.State.normal)
-        cButton.setTitleColor(UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0), for: UIControl.State.normal)
+        cButton.setTitleColor(UIColor(red: 0/255, green: 72/255, blue: 70/255, alpha: 1.0), for: UIControl.State.normal)
         cButton.translatesAutoresizingMaskIntoConstraints = false
         return cButton
     }()

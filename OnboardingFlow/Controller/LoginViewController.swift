@@ -54,9 +54,9 @@ class LogInViewController: UIViewController {
     
     private let logInButton: UIButton = {
         let logInBtn = UIButton()
-        logInBtn.backgroundColor = UIColor(red: 0/255, green: 93/255, blue: 94/255, alpha: 1.0)
+        logInBtn.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
         logInBtn.setTitle("Log In", for: UIControl.State.normal)
-        logInBtn.setTitleColor(UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0), for: UIControl.State.normal)
+        logInBtn.setTitleColor(UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0), for: UIControl.State.normal)
         logInBtn.translatesAutoresizingMaskIntoConstraints = false
         return logInBtn
     }()
