@@ -13,7 +13,7 @@ class LogInViewController: UIViewController {
     
     private let appNameLabel: UILabel = {
         let nameLabel = UILabel()
-        let attributedText = NSAttributedString(string: "Quarantined", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)])
+        let attributedText = NSAttributedString(string: "Quarantine Box", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)])
         nameLabel.attributedText = attributedText
         nameLabel.textColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
         nameLabel.textAlignment = .center

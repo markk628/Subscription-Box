@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension PurchaseHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return monthArray.count

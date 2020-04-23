@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE09987124521549000D003B /* PurchaseHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09987024521549000D003B /* PurchaseHistoryVC.swift */; };
 		FE5E470C244C199400D67295 /* PastBoxesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470B244C199400D67295 /* PastBoxesCell.swift */; };
-		FE5E470E244C1B5100D67295 /* HomeVCTableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */; };
+		FE5E470E244C1B5100D67295 /* PurchaseHistoryVCTableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470D244C1B5100D67295 /* PurchaseHistoryVCTableViewCellExtension.swift */; };
 		FE8FF154244A59D400D4298E /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */; };
 		FEAF250E243E91EF00355BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250D243E91EF00355BC4 /* AppDelegate.swift */; };
 		FEAF2510243E91EF00355BC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */; };
@@ -24,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE09987024521549000D003B /* PurchaseHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryVC.swift; sourceTree = "<group>"; };
 		FE5E470B244C199400D67295 /* PastBoxesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesCell.swift; sourceTree = "<group>"; };
-		FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCellExtension.swift; sourceTree = "<group>"; };
+		FE5E470D244C1B5100D67295 /* PurchaseHistoryVCTableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryVCTableViewCellExtension.swift; sourceTree = "<group>"; };
 		FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
 		FEAF250A243E91EF00355BC4 /* OnboardingFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAF250D243E91EF00355BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +80,8 @@
 				FEAF252B243F1CD500355BC4 /* SwipeControllerCollectoinView.swift */,
 				FEB14AE72446374100587085 /* LoginViewController.swift */,
 				FEB14AE52446372700587085 /* HomeViewController.swift */,
-				FE5E470D244C1B5100D67295 /* HomeVCTableViewCellExtension.swift */,
+				FE09987024521549000D003B /* PurchaseHistoryVC.swift */,
+				FE5E470D244C1B5100D67295 /* PurchaseHistoryVCTableViewCellExtension.swift */,
 				FE8FF153244A59D400D4298E /* NavigationControllerExtension.swift */,
 			);
 			path = Controller;
@@ -106,11 +109,11 @@
 				FEAB42922446285C0056A849 /* Model */,
 				FEAB4294244628920056A849 /* Controller */,
 				FEAB42932446288D0056A849 /* View */,
-				FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */,
 				FEAF250D243E91EF00355BC4 /* AppDelegate.swift */,
-				FEAF2516243E91F200355BC4 /* Assets.xcassets */,
+				FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */,
 				FEAF2518243E91F200355BC4 /* LaunchScreen.storyboard */,
 				FEAF251B243E91F200355BC4 /* Info.plist */,
+				FEAF2516243E91F200355BC4 /* Assets.xcassets */,
 			);
 			path = OnboardingFlow;
 			sourceTree = "<group>";
@@ -196,7 +199,8 @@
 				FEAF2528243F1C9A00355BC4 /* Page.swift in Sources */,
 				FEAF250E243E91EF00355BC4 /* AppDelegate.swift in Sources */,
 				FEAF2510243E91EF00355BC4 /* SceneDelegate.swift in Sources */,
-				FE5E470E244C1B5100D67295 /* HomeVCTableViewCellExtension.swift in Sources */,
+				FE5E470E244C1B5100D67295 /* PurchaseHistoryVCTableViewCellExtension.swift in Sources */,
+				FE09987124521549000D003B /* PurchaseHistoryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
