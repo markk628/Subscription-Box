@@ -25,9 +25,6 @@ class TitleCell: UICollectionViewCell {
         return label
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     func set(title: String) {
         labelTitle.text = title

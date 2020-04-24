@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mark Kim. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -14,7 +13,9 @@ class HomeViewController: UIViewController {
     var collectionView: UICollectionView!
     
     lazy var sections: [Section] = [
-        TitleSection(title: "Catagories")
+        TitleSection(title: "Catagories"),
+        TitleSection(title: "Featured"),
+        FeaturedSection(),
     ]
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
@@ -43,6 +44,7 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = .white
         collectionView.register(TitleCell.self, forCellWithReuseIdentifier: TitleCell.identifier)
+        collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.identifier)
         self.view.addSubview(collectionView)
         collectionView.reloadData()
     }

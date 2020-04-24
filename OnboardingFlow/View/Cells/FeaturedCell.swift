@@ -12,20 +12,13 @@ class FeaturedCell: UICollectionViewCell {
     
     static var identifier: String = "FeaturedCell"
     
-    let mainView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    let imgView: UIImageView = {
+        let img = UIImageView()
+        img.backgroundColor = .blue
+        img.layer.cornerRadius = 10.0
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
     }()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUp()
-    }
-    
-    func setUp() {
-        mainView.layer.cornerRadius = 10.0
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,12 +30,13 @@ class FeaturedCell: UICollectionViewCell {
     }
     
     private func setUpLayout() {
-        addSubview(mainView)
+        addSubview(imgView)
         
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            imgView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            imgView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            imgView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            imgView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
         ])
     }
 }

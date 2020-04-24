@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mark Kim. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class LogInViewController: UIViewController {

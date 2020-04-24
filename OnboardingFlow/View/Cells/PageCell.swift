@@ -57,6 +57,10 @@ class PageCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        continueButton.isHidden = true
+    }
 
     private func setUpLayout() {
         let topImageContainerView = UIView()
@@ -86,9 +90,5 @@ class PageCell: UICollectionViewCell {
             continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
             continueButton.heightAnchor.constraint(equalToConstant: 100)
         ])
-    }
-    
-    override func prepareForReuse() {
-        continueButton.isHidden = true
     }
 }
