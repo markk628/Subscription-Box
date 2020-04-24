@@ -27,7 +27,7 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         return pc
     }()
         
-    fileprivate func setupBottomControls() {
+    fileprivate func setUpBottomControls() {
         let bottomControls = UIView()
         view.addSubview(bottomControls)
 
@@ -68,7 +68,7 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
         
         self.view.addSubview(collectionView)
         
-        setupBottomControls()
+        setUpBottomControls()
     }
 }
 

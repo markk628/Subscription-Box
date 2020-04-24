@@ -51,10 +51,14 @@ class PageCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
+        setUpLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupLayout() {
+    private func setUpLayout() {
         let topImageContainerView = UIView()
         addSubview(topImageContainerView)
         addSubview(descriptionTextView)
@@ -82,10 +86,6 @@ class PageCell: UICollectionViewCell {
             continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
             continueButton.heightAnchor.constraint(equalToConstant: 100)
         ])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func prepareForReuse() {

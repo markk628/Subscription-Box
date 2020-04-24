@@ -69,12 +69,12 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
+        setUpLayout()
         view.backgroundColor = .white
         logInButton.addTarget(self, action: #selector(self.logInButtonTapped), for: .touchUpInside)
     }
     
-    private func setupLayout() {
+    private func setUpLayout() {
         let imageContainerView = UIView()
         view.addSubview(appNameLabel)
         view.addSubview(imageContainerView)

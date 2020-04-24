@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SwipeController {
+extension SwipeController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
@@ -22,7 +22,26 @@ extension SwipeController {
                 self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             }
         }) { (_) in
-            
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pages.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
+        let page = pages[indexPath.item]
+        cell.page = page
+        cell.continueButton.addTarget(self, action: #selector(self.continueButtonTapped), for: .touchUpInside)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
 }
