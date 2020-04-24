@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         TitleSection(title: "Catagories"),
         TitleSection(title: "Featured"),
         FeaturedSection(),
+        TitleSection(title: "Favorites"),
+        FavoritesSection(),
     ]
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
@@ -45,6 +47,7 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = .white
         collectionView.register(TitleCell.self, forCellWithReuseIdentifier: TitleCell.identifier)
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.identifier)
+        collectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: FavoritesCell.identifier)
         self.view.addSubview(collectionView)
         collectionView.reloadData()
     }

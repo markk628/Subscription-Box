@@ -29,6 +29,7 @@
 		FEAF252A243F1CB700355BC4 /* SwipeControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF2529243F1CB700355BC4 /* SwipeControllerExtension.swift */; };
 		FEB14AE62446372700587085 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB14AE52446372700587085 /* HomeViewController.swift */; };
 		FEB14AE82446374100587085 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB14AE72446374100587085 /* LoginViewController.swift */; };
+		FEB357592453A5300092C687 /* FavoritesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB357582453A5300092C687 /* FavoritesSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		FEAF2529243F1CB700355BC4 /* SwipeControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeControllerExtension.swift; sourceTree = "<group>"; };
 		FEB14AE52446372700587085 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FEB14AE72446374100587085 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FEB357582453A5300092C687 /* FavoritesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				FE6207D724526BE000C4A9F3 /* TitleSection.swift */,
 				FE6207DD245285F100C4A9F3 /* FeaturedSection.swift */,
+				FEB357582453A5300092C687 /* FavoritesSection.swift */,
 				FE09987524521C74000D003B /* OfferedItemsSection.swift */,
 			);
 			path = Sections;
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB357592453A5300092C687 /* FavoritesSection.swift in Sources */,
 				FE09987824521DE9000D003B /* FeaturedCell.swift in Sources */,
 				FE6207D524526A2C00C4A9F3 /* HomeVCExtension.swift in Sources */,
 				FEB14AE82446374100587085 /* LoginViewController.swift in Sources */,

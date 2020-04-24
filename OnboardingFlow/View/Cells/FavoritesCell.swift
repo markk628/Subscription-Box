@@ -15,6 +15,7 @@ class FavoritesCell: UICollectionViewCell {
     let favoritesView: UIImageView = {
         let favView = UIImageView()
         favView.layer.cornerRadius = 10
+        favView.backgroundColor = .blue
         favView.translatesAutoresizingMaskIntoConstraints = false
         return favView
     }()
@@ -40,6 +41,7 @@ class FavoritesCell: UICollectionViewCell {
         addSubview(itemLabel)
         
         NSLayoutConstraint.activate([
+            favoritesView.widthAnchor.constraint(equalTo: favoritesView.heightAnchor, multiplier: 1/1),
             favoritesView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             favoritesView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             favoritesView.trailingAnchor.constraint(equalTo: itemLabel.leadingAnchor, constant: -5),
