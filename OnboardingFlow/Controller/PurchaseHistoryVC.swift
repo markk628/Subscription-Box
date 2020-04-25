@@ -10,7 +10,7 @@ import UIKit
 
 class PurchaseHistoryVC: UIViewController {
 
-    let monthArray = ["January ❄️", "February ❄️", "March 🌼", "April 🌼", "May 🌼", "June ☀️", "July ☀️", "August ☀️", "September 🍃", "October 🍃", "November 🍃", "December ❄️"]
+    let monthArray: [String] = ["January ❄️", "February ❄️", "March 🌼", "April 🌼", "May 🌼", "June ☀️", "July ☀️", "August ☀️", "September 🍃", "October 🍃", "November 🍃", "December ❄️"]
     
     let table: UITableView = {
         let table = UITableView()
@@ -34,7 +34,7 @@ class PurchaseHistoryVC: UIViewController {
             table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
         
-        table.register(PastBoxesCellTableViewCell.self, forCellReuseIdentifier: "MonthCell")
+        table.register(PurchaseHistoryTableViewCell.self, forCellReuseIdentifier: "MonthCell")
         table.delegate = self
         table.dataSource = self
     }

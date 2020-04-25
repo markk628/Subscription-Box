@@ -1,5 +1,5 @@
 //
-//  PastBoxesCellTableViewCell.swift
+//  PurchaseHistoryTableViewCell.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/18/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastBoxesCellTableViewCell: UITableViewCell {
+class PurchaseHistoryTableViewCell: UITableViewCell {
     
     let background: UIView = {
         let background = UIView()
