@@ -13,6 +13,7 @@ class TabBarVCs: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        title = "Quarantine Box"
         setUpViewControllers()
     }
     
@@ -35,11 +36,12 @@ class TabBarVCs: UITabBarController {
             return vc
         }()
         
-        let home = UINavigationController(rootViewController: homeVC)
-        let purchaseHistory = UINavigationController(rootViewController: purchaseHistoryVC)
+//        let home = UINavigationController(rootViewController: homeVC)
+//        let purchaseHistory = UINavigationController(rootViewController: purchaseHistoryVC)
         
-        viewControllers = [home, purchaseHistory]
-        
+//        viewControllers = [home, purchaseHistory]
+        viewControllers = [homeVC, purchaseHistoryVC]
+
         self.tabBar.barTintColor = .white
         self.tabBar.tintColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
     }
