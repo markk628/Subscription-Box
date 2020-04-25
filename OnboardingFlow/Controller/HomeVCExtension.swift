@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
@@ -23,4 +23,4 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {}
+extension HomeVC: UICollectionViewDelegate {}

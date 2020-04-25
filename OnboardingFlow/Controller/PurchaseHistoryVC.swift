@@ -1,5 +1,5 @@
 //
-//  PurchaseHistoryViewController.swift
+//  PurchaseHistoryVC.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/23/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PurchaseHistoryViewController: UIViewController {
+class PurchaseHistoryVC: UIViewController {
 
     let monthArray = ["January ❄️", "February ❄️", "March 🌼", "April 🌼", "May 🌼", "June ☀️", "July ☀️", "August ☀️", "September 🍃", "October 🍃", "November 🍃", "December ❄️"]
     
@@ -22,8 +22,6 @@ class PurchaseHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Past Purchases"
         setMonthTable()
     }
     

@@ -1,5 +1,5 @@
 //
-//  SwipeController.swift
+//  SwipeVC.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/9/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
+class SwipeVC: UIViewController, UICollectionViewDelegateFlowLayout {
     
     var collectionView : UICollectionView!
                 
@@ -48,7 +48,7 @@ class SwipeController: UIViewController, UICollectionViewDelegateFlowLayout {
     }
     
     @objc func continueButtonTapped() {
-        let nextVc = LogInViewController()
+        let nextVc = LogInVC()
         self.navigationController?.initRootViewController(vc: nextVc)
     }
     

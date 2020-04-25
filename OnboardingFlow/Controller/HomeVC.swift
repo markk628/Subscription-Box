@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeVC.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/14/20.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeVC: UIViewController {
     
     var collectionView: UICollectionView!
     
     lazy var sections: [Section] = [
-        TitleSection(title: "Catagories"),
         TitleSection(title: "Featured"),
         FeaturedSection(),
         TitleSection(title: "Favorites"),
@@ -30,8 +29,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Quarantine Box"
-        self.view.backgroundColor = .white
         setUpCollectionView()
     }
     

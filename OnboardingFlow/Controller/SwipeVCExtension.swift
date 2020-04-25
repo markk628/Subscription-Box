@@ -1,5 +1,5 @@
 //
-//  SwipeControllerExtension.swift
+//  SwipeVCExtension.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/9/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SwipeController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SwipeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         

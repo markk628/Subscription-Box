@@ -1,5 +1,5 @@
 //
-//  HomeVCTableViewCellExtension.swift
+//  PurchaseHistoryVCExtension.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/18/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PurchaseHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension PurchaseHistoryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return monthArray.count
@@ -21,7 +21,5 @@ extension PurchaseHistoryViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 }

@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginVC.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/14/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInVC: UIViewController {
     
     private let appNameLabel: UILabel = {
         let nameLabel = UILabel()
@@ -61,9 +61,8 @@ class LogInViewController: UIViewController {
     }()
     
     @objc func logInButtonTapped() {
-        let nextVc = HomeViewController()
+        let nextVc = TabBarVCs()
         self.navigationController?.initRootViewController(vc: nextVc)
-        print("hello")
     }
 
     override func viewDidLoad() {
