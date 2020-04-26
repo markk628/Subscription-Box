@@ -64,18 +64,24 @@ class LogInVC: UIViewController {
         let nextVc = TabBarVCs()
         self.navigationController?.initRootViewController(vc: nextVc)
     }
+    
+    @objc func backButtonTapped() {
+        let lastVC = SwipeVC()
+        self.navigationController?.initRootViewController(vc: lastVC)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
         view.backgroundColor = .white
         logInButton.addTarget(self, action: #selector(self.logInButtonTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.backButtonTapped))
     }
     
     private func setUpLayout() {
         let imageContainerView = UIView()
-        view.addSubview(appNameLabel)
         view.addSubview(imageContainerView)
+        view.addSubview(appNameLabel)
         view.addSubview(appDescriptionLabel)
         view.addSubview(userNameTextField)
         view.addSubview(passwordTextField)
