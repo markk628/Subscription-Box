@@ -36,6 +36,7 @@ class TabBarVCs: UITabBarController {
             return vc
         }()
         
+        
 //        let home = UINavigationController(rootViewController: homeVC)
 //        let purchaseHistory = UINavigationController(rootViewController: purchaseHistoryVC)
         
