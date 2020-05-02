@@ -135,10 +135,10 @@
 				FEB14AE52446372700587085 /* HomeVC.swift */,
 				FE6207D424526A2C00C4A9F3 /* HomeVCExtension.swift */,
 				FE09987024521549000D003B /* PurchaseHistoryVC.swift */,
+				FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */,
 				FE757E432455EE8800C36805 /* CategoriesVC.swift */,
 				FE757E4B2456511800C36805 /* CategoriesVCExtension.swift */,
 				FEB3575A2453C2730092C687 /* DetailVC.swift */,
-				FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */,
 				FE8FF153244A59D400D4298E /* NavigationVCExtension.swift */,
 				FEB3575C2453C2A80092C687 /* TabBarVCs.swift */,
 			);
@@ -165,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				FEAB42922446285C0056A849 /* Model */,
-				FEAB4294244628920056A849 /* Controller */,
 				FEAB42932446288D0056A849 /* View */,
+				FEAB4294244628920056A849 /* Controller */,
 				FEAF250D243E91EF00355BC4 /* AppDelegate.swift */,
 				FEAF250F243E91EF00355BC4 /* SceneDelegate.swift */,
 				FEAF2518243E91F200355BC4 /* LaunchScreen.storyboard */,
