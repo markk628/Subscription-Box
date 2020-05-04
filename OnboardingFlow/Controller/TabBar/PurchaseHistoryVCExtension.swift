@@ -21,5 +21,8 @@ extension PurchaseHistoryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let purchaseHistoryDetailVC = PurchaseHistoryDetailVC()
+        navigationController?.pushViewController(purchaseHistoryDetailVC, animated: true)
+    }
 }
