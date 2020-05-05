@@ -12,7 +12,7 @@ class PurchaseHistoryTableViewCell: UITableViewCell {
     
     let background: UIView = {
         let background = UIView()
-        background.backgroundColor = UIColor(red: 00/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        background.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
         background.layer.cornerRadius = 5
         background.layer.masksToBounds = true
         background.translatesAutoresizingMaskIntoConstraints = false

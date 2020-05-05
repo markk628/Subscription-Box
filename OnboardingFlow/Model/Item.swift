@@ -10,7 +10,23 @@ import UIKit
 
 struct Item {
     
+    enum Images: Int {
+        case pill
+        case food
+        case game
+        
+        var image: UIImage {
+            guard let image = UIImage(named: String(describing: self)) else {
+                fatalError("not found")
+            }
+            return image
+        }
+    }
+
     let name: String
+    let dateeCreated: Date = Date()
+    let description: String
     let image: UIImage
+    var quantity: Int = 1
     
 }
