@@ -9,6 +9,8 @@
 import UIKit
 
 class PurchaseHistoryDetailVC: UIViewController {
+    
+    let purchasedItemsArray: [String] = ["Ground Beef"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,11 +8,12 @@
 
 import UIKit
 
-struct Item {
+struct Item: Codable {
     
-    enum Images: Int {
+    enum Images: Int, Codable, CaseIterable {
         case pill
         case food
+        case drop
         case game
         
         var image: UIImage {
@@ -24,9 +25,14 @@ struct Item {
     }
 
     let name: String
-    let dateeCreated: Date = Date()
+    let dateCreated: Date = Date()
     let description: String
-    let image: UIImage
+    let image: Item.Images
     var quantity: Int = 1
     
+    init(name: String, description: String, image: Item.Images) {
+        self.name = name
+        self.description = description
+        self.image = image
+    }
 }

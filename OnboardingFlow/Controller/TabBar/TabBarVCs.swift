@@ -20,12 +20,14 @@ class TabBarVCs: UITabBarController {
     func setUpViewControllers() {
         
         var viewControllerArray = [UIViewController]()
-        let viewControllerClasses = [HomeVC(), PurchaseHistoryVC(), CategoriesVC()]
-        let titles = ["Home", "Purchase History", "Categories"]
+        let viewControllerClasses = [HomeVC(), PurchaseHistoryVC(), CategoriesVC(), CartVC(), ProfileVC()]
+        let titles = ["Home", "Purchase History", "Categories", "Your Cart", "Profile"]
         let tabBarIcons = [
             UITabBarItem(tabBarSystemItem: .featured, tag: 0),
             UITabBarItem(tabBarSystemItem: .history, tag: 0),
-            UITabBarItem(title: "Categories", image: UIImage(named: "category"), selectedImage: UIImage(named: "category"))
+            UITabBarItem(title: "Categories", image: UIImage(named: "category"), selectedImage: UIImage(named: "category")),
+            UITabBarItem(title: "Your Cart", image: UIImage(named: "cart"), selectedImage: UIImage(named: "cart")),
+            UITabBarItem(title: "Profile", image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile"))
         ]
         
         for i in 0..<viewControllerClasses.count {
@@ -82,7 +84,7 @@ class TabBarVCs: UITabBarController {
     }
     
     @objc func openNextScene(){
-        let detailVC = DetailVC()
+        let detailVC = ItemDetailVC()
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

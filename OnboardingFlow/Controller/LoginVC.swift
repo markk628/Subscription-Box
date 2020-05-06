@@ -59,7 +59,7 @@ class LogInVC: UIViewController {
         logInBtn.translatesAutoresizingMaskIntoConstraints = false
         return logInBtn
     }()
-    
+        
     @objc func logInButtonTapped() {
         let nextVc = TabBarVCs()
         self.navigationController?.initRootViewController(vc: nextVc)

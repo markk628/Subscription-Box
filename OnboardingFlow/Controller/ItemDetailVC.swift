@@ -1,5 +1,5 @@
 //
-//  DetailVC.swift
+//  ItemDetailVC.swift
 //  OnboardingFlow
 //
 //  Created by Mark Kim on 4/24/20.
@@ -8,8 +8,11 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
-
+class ItemDetailVC: UIViewController {
+    
+    var item: Item!
+    var itemIndex: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
