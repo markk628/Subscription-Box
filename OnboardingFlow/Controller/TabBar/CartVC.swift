@@ -29,6 +29,8 @@ class CartVC: UIViewController {
         super.viewDidLoad()
         setCartTable()
         
+        
+        
     }
     
     func setCartTable() {

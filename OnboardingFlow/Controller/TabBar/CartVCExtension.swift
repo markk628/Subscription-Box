@@ -22,7 +22,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let itemDetailVC = CartItemDetailVC()
-//        navigationController?.pushViewController(itemDetailVC, animated: true)
+        let itemDetailVC = CartItemDetailVC()
+        navigationController?.pushViewController(itemDetailVC, animated: true)
     }
 }

@@ -12,6 +12,8 @@
 		FE09987824521DE9000D003B /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09987724521DE9000D003B /* FeaturedCell.swift */; };
 		FE41090B245E0492006DC479 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41090A245E0492006DC479 /* ProfileVC.swift */; };
 		FE49DC88246340DC0033F5D0 /* CartVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC87246340DC0033F5D0 /* CartVCExtension.swift */; };
+		FE49DC8A246348080033F5D0 /* CartItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC89246348080033F5D0 /* CartItemDetailVC.swift */; };
+		FE49DC8C2463C9E50033F5D0 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */; };
 		FE5E470C244C199400D67295 /* PurchaseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470B244C199400D67295 /* PurchaseHistoryCell.swift */; };
 		FE5E470E244C1B5100D67295 /* PurchaseHistoryVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */; };
 		FE6207D524526A2C00C4A9F3 /* HomeVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6207D424526A2C00C4A9F3 /* HomeVCExtension.swift */; };
@@ -50,6 +52,8 @@
 		FE09987724521DE9000D003B /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		FE41090A245E0492006DC479 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		FE49DC87246340DC0033F5D0 /* CartVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVCExtension.swift; sourceTree = "<group>"; };
+		FE49DC89246348080033F5D0 /* CartItemDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailVC.swift; sourceTree = "<group>"; };
+		FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		FE5E470B244C199400D67295 /* PurchaseHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryCell.swift; sourceTree = "<group>"; };
 		FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryVCExtension.swift; sourceTree = "<group>"; };
 		FE6207D424526A2C00C4A9F3 /* HomeVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCExtension.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				FEB24D772454C43D00C62352 /* Item.swift */,
 				FE757E452455FB9000C36805 /* Category.swift */,
 				FE6207D624526BA800C4A9F3 /* Sections */,
+				FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				FE757E4B2456511800C36805 /* CategoriesVCExtension.swift */,
 				FE7E80A324613E2900223A47 /* CartVC.swift */,
 				FE49DC87246340DC0033F5D0 /* CartVCExtension.swift */,
+				FE49DC89246348080033F5D0 /* CartItemDetailVC.swift */,
 				FE41090A245E0492006DC479 /* ProfileVC.swift */,
 				FEB3575C2453C2A80092C687 /* TabBarVCs.swift */,
 			);
@@ -275,6 +281,7 @@
 				FEB357592453A5300092C687 /* FavoritesSection.swift in Sources */,
 				FE09987824521DE9000D003B /* FeaturedCell.swift in Sources */,
 				FE6207D524526A2C00C4A9F3 /* HomeVCExtension.swift in Sources */,
+				FE49DC8C2463C9E50033F5D0 /* PersistenceLayer.swift in Sources */,
 				FEB14AE82446374100587085 /* LoginVC.swift in Sources */,
 				FEB24D782454C43D00C62352 /* Item.swift in Sources */,
 				FEBE1A0324606CDA00CAB3C0 /* PurchaseHistoryDetailVC.swift in Sources */,
@@ -292,6 +299,7 @@
 				FEB3575B2453C2730092C687 /* ItemDetailVC.swift in Sources */,
 				FE6207DC2452782600C4A9F3 /* FavoritesCell.swift in Sources */,
 				FE41090B245E0492006DC479 /* ProfileVC.swift in Sources */,
+				FE49DC8A246348080033F5D0 /* CartItemDetailVC.swift in Sources */,
 				FE757E462455FB9000C36805 /* Category.swift in Sources */,
 				FE6207DE245285F100C4A9F3 /* FeaturedSection.swift in Sources */,
 				FE757E4C2456511800C36805 /* CategoriesVCExtension.swift in Sources */,
