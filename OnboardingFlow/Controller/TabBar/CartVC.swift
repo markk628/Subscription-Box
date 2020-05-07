@@ -10,6 +10,8 @@ import UIKit
 
 class CartVC: UIViewController {
     
+    var persistence = PersistenceLayer()
+    
     var items: [Item] = [
         Item(name: "Steak", description: "T-Bone", image: Item.Images.food),
         Item(name: "Water", description: "Straight from Antarctica", image: Item.Images.drop),
@@ -29,8 +31,13 @@ class CartVC: UIViewController {
         super.viewDidLoad()
         setCartTable()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
+        persistence.setNeedsToReloadItems()
+        table.reloadData()
     }
     
     func setCartTable() {

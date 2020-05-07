@@ -27,12 +27,12 @@ struct Item: Codable {
     let name: String
     let dateCreated: Date = Date()
     let description: String
-    let image: Item.Images
+    let selectedImage: Item.Images
     var quantity: Int = 1
     
     init(name: String, description: String, image: Item.Images) {
         self.name = name
         self.description = description
-        self.image = image
+        self.selectedImage = image
     }
 }
