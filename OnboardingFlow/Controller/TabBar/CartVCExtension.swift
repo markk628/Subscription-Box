@@ -25,7 +25,38 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = persistence.items[indexPath.row]
         let itemDetailVC = CartItemDetailVC()
-        itemDetailVC.item
+        itemDetailVC.item = selectedItem
+        itemDetailVC.itemIndex = indexPath.row
         navigationController?.pushViewController(itemDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let itemToDelete = persistence.items[indexPath.row]
+            let itemIndexToDelete = indexPath.row
+            let deleteAlert = UIAlertController(itemName: itemToDelete.name) {
+                self.persistence.delete(itemIndexToDelete)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+            self.present(deleteAlert, animated: true)
+        default:
+            break
+        }
+    }
+}
+
+extension UIAlertController {
+    convenience init(itemName: String, confirmHandler: @escaping () -> Void) {
+        self.init(title: "Remove Item", message: "Are you sure you want to remove \(itemName) from your cart?", preferredStyle: .actionSheet)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .destructive) { _ in
+            confirmHandler()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        self.addAction(confirmAction)
+        self.addAction(cancelAction)
     }
 }
