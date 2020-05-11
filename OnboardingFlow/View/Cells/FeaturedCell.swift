@@ -12,7 +12,7 @@ class FeaturedCell: UICollectionViewCell {
     
     static var identifier: String = "FeaturedCell"
     
-    let imgView: UIImageView = {
+    private let imgView: UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .blue
         img.layer.cornerRadius = 10.0

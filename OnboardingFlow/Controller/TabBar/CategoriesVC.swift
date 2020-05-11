@@ -27,30 +27,6 @@ class CategoriesVC: UIViewController, UICollectionViewDelegateFlowLayout {
         return pc
     }()
     
-    fileprivate func setUpBottomControls() {
-        let bottomControls = UIView()
-        view.addSubview(bottomControls)
-
-        bottomControls.addSubview(categoryControl)
-        bottomControls.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            bottomControls.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bottomControls.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            bottomControls.heightAnchor.constraint(equalToConstant: 50),
-        ])
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let x = targetContentOffset.pointee.x
-        categoryControl.currentPage = Int(x / view.frame.width)
-    }
-    
-    @objc func viewItemsButtonTapped() {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,5 +44,29 @@ class CategoriesVC: UIViewController, UICollectionViewDelegateFlowLayout {
         self.view.addSubview(collectionView)
         
         setUpBottomControls()
+    }
+    
+    fileprivate func setUpBottomControls() {
+        let bottomControls = UIView()
+        view.addSubview(bottomControls)
+
+        bottomControls.addSubview(categoryControl)
+        bottomControls.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            bottomControls.heightAnchor.constraint(equalToConstant: 50),
+            bottomControls.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControls.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
+    
+    private func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        categoryControl.currentPage = Int(x / view.frame.width)
+    }
+    
+    @objc func viewItemsButtonTapped() {
+        
     }
 }

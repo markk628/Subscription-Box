@@ -15,39 +15,56 @@ class CartItemDetailVC: UIViewController {
     
     private var persistence = PersistenceLayer()
     
-    let imageViewIcon: UIImageView = {
+    private let imageViewIcon: UIImageView = {
         let imageViewIcon = UIImageView()
         imageViewIcon.translatesAutoresizingMaskIntoConstraints = false
         imageViewIcon.contentMode = .scaleAspectFit
         return imageViewIcon
     }()
     
-    let itemName: UILabel = {
+    private let itemName: UILabel = {
         let itemName = UILabel()
         itemName.translatesAutoresizingMaskIntoConstraints = false
-        
         return itemName
     }()
     
-    let itemDescription: UILabel = {
+    private let itemDescription: UILabel = {
         let itemDescription = UILabel()
         itemDescription.translatesAutoresizingMaskIntoConstraints = false
         return itemDescription
     }()
     
-    let addedDate: UILabel = {
+    private let addedDate: UILabel = {
         let addedDate = UILabel()
         addedDate.translatesAutoresizingMaskIntoConstraints = false
         return addedDate
     }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    private func setUpCartItemDetailLayout() {
+        view.addSubview(imageViewIcon)
+        view.addSubview(itemName)
+        view.addSubview(itemDescription)
+        view.addSubview(addedDate)
+        
+        NSLayoutConstraint.activate([
+            imageViewIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageViewIcon.widthAnchor.constraint(equalToConstant: 240),
+            imageViewIcon.heightAnchor.constraint(equalToConstant: 240),
+            imageViewIcon.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            
+            itemName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            itemName.topAnchor.constraint(equalTo: imageViewIcon.bottomAnchor, constant: 30),
+            
+        ])
     }
     
     private func updateUI() {

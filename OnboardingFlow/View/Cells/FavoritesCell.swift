@@ -12,7 +12,7 @@ class FavoritesCell: UICollectionViewCell {
     
     static var identifier: String = "FavoritesCell"
     
-    let favoritesView: UIImageView = {
+    private let favoritesView: UIImageView = {
         let favView = UIImageView()
         favView.layer.cornerRadius = 10
         favView.backgroundColor = .blue
@@ -20,7 +20,7 @@ class FavoritesCell: UICollectionViewCell {
         return favView
     }()
     
-    let itemLabel: UILabel = {
+    private let itemLabel: UILabel = {
         let itemName = UILabel()
         itemName.text = "Item Name"
         itemName.translatesAutoresizingMaskIntoConstraints = false

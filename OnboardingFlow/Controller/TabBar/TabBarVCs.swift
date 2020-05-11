@@ -15,9 +15,11 @@ class TabBarVCs: UITabBarController {
         self.view.backgroundColor = UIColor.white
         title = "Quarantine Box"
         setUpViewControllers()
+        setUpNavBar()
+
     }
     
-    func setUpViewControllers() {
+    private func setUpViewControllers() {
         
         var viewControllerArray = [UIViewController]()
         let viewControllerClasses = [HomeVC(), PurchaseHistoryVC(), CategoriesVC(), CartVC(), ProfileVC()]
@@ -83,8 +85,22 @@ class TabBarVCs: UITabBarController {
 //
     }
     
+    private func setUpNavBar() {
+           title = "Cart"
+           let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddItem(_:)))
+           navigationItem.rightBarButtonItem = addButton
+           navigationItem.leftBarButtonItem = self.editButtonItem
+       }
+       
+       @objc func pressAddItem(_ sender: UIBarButtonItem) {
+        let addItemVC = AddItemVC()
+           let navigationController = UINavigationController(rootViewController: addItemVC)
+           navigationController.modalPresentationStyle = .fullScreen
+           present(navigationController, animated: true, completion: nil)
+       }
+    
     @objc func openNextScene(){
-        let detailVC = ItemDetailVC()
+        let detailVC = CartItemDetailVC()
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

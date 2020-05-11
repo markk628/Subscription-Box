@@ -21,6 +21,12 @@ class CategoryCell: UICollectionViewCell {
         }
     }
     
+    private let topImageContainerView: UIView = {
+        let topImageContainerView = UIView()
+        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        return topImageContainerView
+    }()
+    
     private let bbqImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "BBQ.png"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,32 +68,30 @@ class CategoryCell: UICollectionViewCell {
     }
 
     private func setUpLayout() {
-        let topImageContainerView = UIView()
         addSubview(topImageContainerView)
         addSubview(descriptionTextView)
         addSubview(continueButton)
         topImageContainerView.addSubview(bbqImageView)
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            topImageContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
             topImageContainerView.topAnchor.constraint(equalTo: topAnchor),
             topImageContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             topImageContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topImageContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
 
             bbqImageView.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
             bbqImageView.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
             bbqImageView.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5),
             
-            descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor),
             descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
             descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
+            descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor),
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-            continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150),
+            continueButton.heightAnchor.constraint(equalToConstant: 100),
             continueButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 50),
             continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            continueButton.heightAnchor.constraint(equalToConstant: 100)
+            continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150),
         ])
     }
 }

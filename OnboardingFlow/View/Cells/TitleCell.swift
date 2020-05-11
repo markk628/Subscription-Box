@@ -12,23 +12,18 @@ class TitleCell: UICollectionViewCell {
     
     static var identifier: String = "TitleCell"
     
-    let borderView: UIView = {
+    private let borderView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray3
         return view
     }()
     
-    let labelTitle: UILabel = {
+    private let labelTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
-    func set(title: String) {
-        labelTitle.text = title
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,5 +49,9 @@ class TitleCell: UICollectionViewCell {
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
             borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
         ])
+    }
+    
+    func set(title: String) {
+        labelTitle.text = title
     }
 }

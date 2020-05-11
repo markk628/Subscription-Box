@@ -12,7 +12,7 @@ class PurchaseHistoryVC: UIViewController {
 
     let monthArray: [String] = ["January ❄️", "February ❄️", "March 🌼", "April 🌼", "May 🌼", "June ☀️", "July ☀️", "August ☀️", "September 🍃", "October 🍃", "November 🍃", "December ❄️"]
     
-    let table: UITableView = {
+    private let table: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.rowHeight = 100
@@ -25,12 +25,12 @@ class PurchaseHistoryVC: UIViewController {
         setMonthTable()
     }
     
-    func setMonthTable() {
+    private func setMonthTable() {
         view.addSubview(table)
         NSLayoutConstraint.activate([
-            table.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            table.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
         

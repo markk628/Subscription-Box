@@ -19,7 +19,7 @@ class CartVC: UIViewController {
         Item(name: "sleeping pill", description: "so I can sleep duh", image: Item.Images.pill)
     ]
 
-    let table: UITableView = {
+    private let table: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.rowHeight = 100
@@ -30,7 +30,6 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCartTable()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,16 +39,16 @@ class CartVC: UIViewController {
         table.reloadData()
     }
     
-    func setCartTable() {
+    private func setCartTable() {
         view.addSubview(table)
         NSLayoutConstraint.activate([
-            table.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            table.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
         
-        table.register(CartTableViewCell.self, forCellReuseIdentifier: "CartItemCell")
+        table.register(CartTableViewCell.self, forCellReuseIdentifier: CartTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
     }

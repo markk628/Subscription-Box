@@ -37,7 +37,7 @@ class HomeVC: UIViewController {
         collectionView.reloadData()
     }
     
-    func setUpCollectionView() {
+    private func setUpCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: collectionViewLayout)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -49,7 +49,7 @@ class HomeVC: UIViewController {
         collectionView.reloadData()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
         collectionView.reloadData()
     }
 }

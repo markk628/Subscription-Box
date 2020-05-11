@@ -10,7 +10,7 @@ import UIKit
 
 class PurchaseHistoryTableViewCell: UITableViewCell {
     
-    let background: UIView = {
+    private let background: UIView = {
         let background = UIView()
         background.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
         background.layer.cornerRadius = 5
@@ -35,13 +35,13 @@ class PurchaseHistoryTableViewCell: UITableViewCell {
         self.setUpBackground()
     }
     
-    func setUpBackground() {
+    private func setUpBackground() {
         self.contentView.addSubview(background)
         NSLayoutConstraint.activate([
             background.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             background.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             background.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
     }
 

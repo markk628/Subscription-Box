@@ -10,6 +10,12 @@ import UIKit
 
 class LogInVC: UIViewController {
     
+    private let imageContainerView: UIView = {
+        let imageContainerView = UIView()
+        imageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        return imageContainerView
+    }()
+    
     private let appNameLabel: UILabel = {
         let nameLabel = UILabel()
         let attributedText = NSAttributedString(string: "Quarantine Box", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)])
@@ -59,16 +65,6 @@ class LogInVC: UIViewController {
         logInBtn.translatesAutoresizingMaskIntoConstraints = false
         return logInBtn
     }()
-        
-    @objc func logInButtonTapped() {
-        let nextVc = TabBarVCs()
-        self.navigationController?.initRootViewController(vc: nextVc)
-    }
-    
-    @objc func backButtonTapped() {
-        let lastVC = SwipeVC()
-        self.navigationController?.initRootViewController(vc: lastVC)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +75,6 @@ class LogInVC: UIViewController {
     }
     
     private func setUpLayout() {
-        let imageContainerView = UIView()
         view.addSubview(imageContainerView)
         view.addSubview(appNameLabel)
         view.addSubview(appDescriptionLabel)
@@ -87,43 +82,52 @@ class LogInVC: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(logInButton)
         imageContainerView.addSubview(appImage)
-        imageContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            appNameLabel.heightAnchor.constraint(equalToConstant: 50),
             appNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             appNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -50),
             appNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 50),
-            appNameLabel.heightAnchor.constraint(equalToConstant: 50),
 
+            imageContainerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
             imageContainerView.topAnchor.constraint(equalTo: appNameLabel.bottomAnchor),
             imageContainerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             imageContainerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            imageContainerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
             
             appImage.centerXAnchor.constraint(equalTo: imageContainerView.centerXAnchor),
             appImage.centerYAnchor.constraint(equalTo: imageContainerView.centerYAnchor),
             appImage.heightAnchor.constraint(equalTo: imageContainerView.heightAnchor, multiplier: 0.5),
             
+            appDescriptionLabel.heightAnchor.constraint(equalToConstant: 50),
             appDescriptionLabel.topAnchor.constraint(equalTo: imageContainerView.bottomAnchor),
             appDescriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -24),
             appDescriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 24),
-            appDescriptionLabel.heightAnchor.constraint(equalToConstant: 50),
             
+            userNameTextField.heightAnchor.constraint(equalToConstant: 50),
             userNameTextField.topAnchor.constraint(equalTo: appDescriptionLabel.bottomAnchor),
             userNameTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             userNameTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 5),
             passwordTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             passwordTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
+            logInButton.heightAnchor.constraint(equalToConstant: 50),
             logInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             logInButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             logInButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            logInButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func logInButtonTapped() {
+        let nextVc = TabBarVCs()
+        self.navigationController?.initRootViewController(vc: nextVc)
+    }
+    
+    @objc func backButtonTapped() {
+        let lastVC = SwipeVC()
+        self.navigationController?.initRootViewController(vc: lastVC)
     }
 }
 

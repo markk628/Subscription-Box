@@ -18,7 +18,7 @@ struct Item: Codable {
         
         var image: UIImage {
             guard let image = UIImage(named: String(describing: self)) else {
-                fatalError("not found")
+                fatalError("\(self) not found")
             }
             return image
         }

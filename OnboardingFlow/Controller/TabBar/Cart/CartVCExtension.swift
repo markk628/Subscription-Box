@@ -32,17 +32,16 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
-        case .delete:
-            let itemToDelete = persistence.items[indexPath.row]
-            let itemIndexToDelete = indexPath.row
-            let deleteAlert = UIAlertController(itemName: itemToDelete.name) {
-                self.persistence.delete(itemIndexToDelete)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
-            
-            self.present(deleteAlert, animated: true)
-        default:
-            break
+            case .delete:
+                let itemToDelete = persistence.items[indexPath.row]
+                let itemIndexToDelete = indexPath.row
+                let deleteAlert = UIAlertController(itemName: itemToDelete.name) {
+                    self.persistence.delete(itemIndexToDelete)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
+                self.present(deleteAlert, animated: true)
+            default:
+                break
         }
     }
 }
