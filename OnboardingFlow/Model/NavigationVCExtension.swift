@@ -10,11 +10,12 @@ import UIKit
 
 extension UINavigationController {
 
-    func initRootViewController(vc: UIViewController, transitionType type: String = "kCATransitionFade", duration: CFTimeInterval = 0.3) {
+    func initRootViewController(vc: UIViewController, transitionType type: String = "kCATransitionFade", duration: CFTimeInterval = 0.3, navBarHidden: Bool) {
         self.addTransition(transitionType: type, duration: duration)
         self.viewControllers.removeAll()
         self.pushViewController(vc, animated: false)
         self.popToRootViewController(animated: false)
+        self.navigationBar.isHidden = navBarHidden
     }
 
     private func addTransition(transitionType type: String = "kCATransitionFade", duration: CFTimeInterval = 0.3) {

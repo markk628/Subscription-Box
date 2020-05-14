@@ -10,10 +10,12 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
+    static let identifier = "PageCell"
+    
     var page: Page? {
         didSet {
             guard let unwrappedPage = page else { return }
-            bbqImageView.image = UIImage(named: unwrappedPage.imageName)
+            imageView.image = UIImage(named: unwrappedPage.imageName)
             let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
             descriptionTextView.attributedText = attributedText
             descriptionTextView.textAlignment = .center
@@ -22,13 +24,7 @@ class PageCell: UICollectionViewCell {
         }
     }
     
-    private let topImageContainerView: UIView = {
-        let topImageContainerView = UIView()
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        return topImageContainerView
-    }()
-    
-    private let bbqImageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "BBQ.png"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -69,30 +65,26 @@ class PageCell: UICollectionViewCell {
     }
 
     private func setUpLayout() {
-        addSubview(topImageContainerView)
+        addSubview(imageView)
         addSubview(descriptionTextView)
         addSubview(continueButton)
-        topImageContainerView.addSubview(bbqImageView)
         
         NSLayoutConstraint.activate([
-            topImageContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
-            topImageContainerView.topAnchor.constraint(equalTo: topAnchor),
-            topImageContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            topImageContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-
-            bbqImageView.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
-            bbqImageView.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
-            bbqImageView.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5),
+            
+            imageView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            imageView.topAnchor.constraint(equalToSystemSpacingBelow: self.safeAreaLayoutGuide.topAnchor, multiplier: 0.25),
+            imageView.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
             
             descriptionTextView.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
             descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
-            descriptionTextView.topAnchor.constraint(equalTo: topImageContainerView.bottomAnchor),
+            descriptionTextView.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-            continueButton.heightAnchor.constraint(equalToConstant: 100),
-            continueButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 50),
-            continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)
+            continueButton.heightAnchor.constraint(equalToConstant: 70),
+            continueButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 65),
+            continueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -65),
+            continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -135)
         ])
     }
 }

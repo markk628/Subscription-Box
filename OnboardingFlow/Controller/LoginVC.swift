@@ -84,12 +84,12 @@ class LogInVC: UIViewController {
         imageContainerView.addSubview(appImage)
         
         NSLayoutConstraint.activate([
-            appNameLabel.heightAnchor.constraint(equalToConstant: 50),
+            appNameLabel.heightAnchor.constraint(equalToConstant: 30),
             appNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             appNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -50),
             appNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 50),
 
-            imageContainerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
+            imageContainerView.heightAnchor.constraint(equalToConstant: 300),
             imageContainerView.topAnchor.constraint(equalTo: appNameLabel.bottomAnchor),
             imageContainerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             imageContainerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -122,12 +122,13 @@ class LogInVC: UIViewController {
     
     @objc func logInButtonTapped() {
         let nextVc = TabBarVCs()
-        self.navigationController?.initRootViewController(vc: nextVc)
+        self.navigationController?.initRootViewController(vc: nextVc, navBarHidden: false)
+        
     }
     
     @objc func backButtonTapped() {
         let lastVC = SwipeVC()
-        self.navigationController?.initRootViewController(vc: lastVC)
+        self.navigationController?.initRootViewController(vc: lastVC, navBarHidden: false)
     }
 }
 

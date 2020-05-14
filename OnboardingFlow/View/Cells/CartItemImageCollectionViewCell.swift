@@ -14,14 +14,15 @@ class CartItemImageCollectionViewCell: UICollectionViewCell {
     
     private let itemImage: UIImageView = {
         let itemImage = UIImageView()
-        itemImage.contentMode = .scaleAspectFit
+        itemImage.contentMode = .center
         itemImage.translatesAutoresizingMaskIntoConstraints = false
         return itemImage
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = .white
+        setUpLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -41,10 +42,10 @@ class CartItemImageCollectionViewCell: UICollectionViewCell {
         self.addSubview(itemImage)
         
         NSLayoutConstraint.activate([
-            itemImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            itemImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            itemImage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            itemImage.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            itemImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15),
+            itemImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            itemImage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            itemImage.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -60),
         ])
     }
 }

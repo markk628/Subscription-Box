@@ -16,7 +16,7 @@
 		FE49DC8A246348080033F5D0 /* CartItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC89246348080033F5D0 /* CartItemDetailVC.swift */; };
 		FE49DC8C2463C9E50033F5D0 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */; };
 		FE49DC902463DA460033F5D0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE49DC8F2463DA460033F5D0 /* DateExtension.swift */; };
-		FE5E470C244C199400D67295 /* PurchaseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470B244C199400D67295 /* PurchaseHistoryCell.swift */; };
+		FE5E470C244C199400D67295 /* PurchaseHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470B244C199400D67295 /* PurchaseHistoryTableViewCell.swift */; };
 		FE5E470E244C1B5100D67295 /* PurchaseHistoryVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */; };
 		FE6207D524526A2C00C4A9F3 /* HomeVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6207D424526A2C00C4A9F3 /* HomeVCExtension.swift */; };
 		FE6207D824526BE000C4A9F3 /* TitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6207D724526BE000C4A9F3 /* TitleSection.swift */; };
@@ -45,6 +45,8 @@
 		FEB357592453A5300092C687 /* FavoritesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB357582453A5300092C687 /* FavoritesSection.swift */; };
 		FEB3575D2453C2A80092C687 /* TabBarVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3575C2453C2A80092C687 /* TabBarVCs.swift */; };
 		FEBE1A0324606CDA00CAB3C0 /* PurchaseHistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBE1A0224606CDA00CAB3C0 /* PurchaseHistoryDetailVC.swift */; };
+		FEC5F32B246CBDE600562DAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5F32A246CBDE600562DAB /* UIViewControllerExtension.swift */; };
+		FEC5F32D246DB41D00562DAB /* PurchasHistoryDetailVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5F32C246DB41D00562DAB /* PurchasHistoryDetailVCExtension.swift */; };
 		FECCC099246872C4004170D8 /* AddItemVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCC098246872C4004170D8 /* AddItemVCExtension.swift */; };
 		FEF458ED246774C400171F3E /* ConfirmItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF458EC246774C400171F3E /* ConfirmItemVC.swift */; };
 		FEF458EF2467835300171F3E /* CartItemImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF458EE2467835300171F3E /* CartItemImageCollectionViewCell.swift */; };
@@ -60,7 +62,7 @@
 		FE49DC89246348080033F5D0 /* CartItemDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailVC.swift; sourceTree = "<group>"; };
 		FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		FE49DC8F2463DA460033F5D0 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		FE5E470B244C199400D67295 /* PurchaseHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryCell.swift; sourceTree = "<group>"; };
+		FE5E470B244C199400D67295 /* PurchaseHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryVCExtension.swift; sourceTree = "<group>"; };
 		FE6207D424526A2C00C4A9F3 /* HomeVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCExtension.swift; sourceTree = "<group>"; };
 		FE6207D724526BE000C4A9F3 /* TitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSection.swift; sourceTree = "<group>"; };
@@ -91,6 +93,8 @@
 		FEB357582453A5300092C687 /* FavoritesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSection.swift; sourceTree = "<group>"; };
 		FEB3575C2453C2A80092C687 /* TabBarVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVCs.swift; sourceTree = "<group>"; };
 		FEBE1A0224606CDA00CAB3C0 /* PurchaseHistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryDetailVC.swift; sourceTree = "<group>"; };
+		FEC5F32A246CBDE600562DAB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		FEC5F32C246DB41D00562DAB /* PurchasHistoryDetailVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasHistoryDetailVCExtension.swift; sourceTree = "<group>"; };
 		FECCC098246872C4004170D8 /* AddItemVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVCExtension.swift; sourceTree = "<group>"; };
 		FEF458EC246774C400171F3E /* ConfirmItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmItemVC.swift; sourceTree = "<group>"; };
 		FEF458EE2467835300171F3E /* CartItemImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +118,7 @@
 				FE6207D924526D1000C4A9F3 /* TitleCell.swift */,
 				FE09987724521DE9000D003B /* FeaturedCell.swift */,
 				FE6207DB2452782600C4A9F3 /* FavoritesCell.swift */,
-				FE5E470B244C199400D67295 /* PurchaseHistoryCell.swift */,
+				FE5E470B244C199400D67295 /* PurchaseHistoryTableViewCell.swift */,
 				FE7E80A124612EF400223A47 /* PurchaseHistoryDetailTableViewCell.swift */,
 				FE757E4D245653EB00C36805 /* CategoryCell.swift */,
 				FE6B9FA024621531009E47E5 /* CartTableViewCell.swift */,
@@ -155,6 +159,7 @@
 				FE49DC8B2463C9E50033F5D0 /* PersistenceLayer.swift */,
 				FE8FF153244A59D400D4298E /* NavigationVCExtension.swift */,
 				FE49DC8F2463DA460033F5D0 /* DateExtension.swift */,
+				FEC5F32A246CBDE600562DAB /* UIViewControllerExtension.swift */,
 				FE6207D624526BA800C4A9F3 /* Sections */,
 			);
 			path = Model;
@@ -219,6 +224,7 @@
 				FE09987024521549000D003B /* PurchaseHistoryVC.swift */,
 				FE5E470D244C1B5100D67295 /* PurchaseHistoryVCExtension.swift */,
 				FEBE1A0224606CDA00CAB3C0 /* PurchaseHistoryDetailVC.swift */,
+				FEC5F32C246DB41D00562DAB /* PurchasHistoryDetailVCExtension.swift */,
 				FE757E432455EE8800C36805 /* CategoriesVC.swift */,
 				FE757E4B2456511800C36805 /* CategoriesVCExtension.swift */,
 				FE41090A245E0492006DC479 /* ProfileVC.swift */,
@@ -310,14 +316,16 @@
 				FE09987424521A23000D003B /* Section.swift in Sources */,
 				FE49DC88246340DC0033F5D0 /* CartVCExtension.swift in Sources */,
 				FE8FF154244A59D400D4298E /* NavigationVCExtension.swift in Sources */,
+				FEC5F32B246CBDE600562DAB /* UIViewControllerExtension.swift in Sources */,
 				FEAF2524243F08F100355BC4 /* SwipeVC.swift in Sources */,
 				FE6207D824526BE000C4A9F3 /* TitleSection.swift in Sources */,
 				FEF458ED246774C400171F3E /* ConfirmItemVC.swift in Sources */,
 				FE49DC902463DA460033F5D0 /* DateExtension.swift in Sources */,
 				FEAF252A243F1CB700355BC4 /* SwipeVCExtension.swift in Sources */,
 				FECCC099246872C4004170D8 /* AddItemVCExtension.swift in Sources */,
+				FEC5F32D246DB41D00562DAB /* PurchasHistoryDetailVCExtension.swift in Sources */,
 				FEB14AE62446372700587085 /* HomeVC.swift in Sources */,
-				FE5E470C244C199400D67295 /* PurchaseHistoryCell.swift in Sources */,
+				FE5E470C244C199400D67295 /* PurchaseHistoryTableViewCell.swift in Sources */,
 				FE757E442455EE8800C36805 /* CategoriesVC.swift in Sources */,
 				FEAF2526243F0DAA00355BC4 /* PageCell.swift in Sources */,
 				FE6207DC2452782600C4A9F3 /* FavoritesCell.swift in Sources */,

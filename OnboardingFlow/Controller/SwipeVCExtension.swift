@@ -8,22 +8,22 @@
 
 import UIKit
 
-extension SwipeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SwipeVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        coordinator.animate(alongsideTransition: { (_) in
-            //self.collectionViewLayout.invalidateLayout()
-            
-            if self.pageControl.currentPage == 0 {
-                self.collectionView?.contentOffset = .zero
-            } else {
-                let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
-                self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            }
-        }) { (_) in
-        }
-    }
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        
+//        coordinator.animate(alongsideTransition: { (_) in
+//            //self.collectionViewLayout.invalidateLayout()
+//            
+//            if self.pageControl.currentPage == 0 {
+//                self.collectionView?.contentOffset = .zero
+//            } else {
+//                let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
+//                self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//            }
+//        }) { (_) in
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
@@ -43,5 +43,10 @@ extension SwipeVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        pageControl.currentPage = Int(x / view.frame.width)
     }
 }

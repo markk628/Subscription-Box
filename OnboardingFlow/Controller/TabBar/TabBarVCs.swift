@@ -8,27 +8,27 @@
 
 import UIKit
 
-class TabBarVCs: UITabBarController {
+class TabBarVCs: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         title = "Quarantine Box"
         setUpViewControllers()
-        setUpNavBar()
-
+        self.delegate = self
     }
     
     private func setUpViewControllers() {
         
+        
         var viewControllerArray = [UIViewController]()
-        let viewControllerClasses = [HomeVC(), PurchaseHistoryVC(), CategoriesVC(), CartVC(), ProfileVC()]
+        let viewControllerClasses = [HomeVC(), CartVC(), CategoriesVC(), PurchaseHistoryVC(), ProfileVC()]
         let titles = ["Home", "Purchase History", "Categories", "Your Cart", "Profile"]
         let tabBarIcons = [
             UITabBarItem(tabBarSystemItem: .featured, tag: 0),
-            UITabBarItem(tabBarSystemItem: .history, tag: 0),
-            UITabBarItem(title: "Categories", image: UIImage(named: "category"), selectedImage: UIImage(named: "category")),
             UITabBarItem(title: "Your Cart", image: UIImage(named: "cart"), selectedImage: UIImage(named: "cart")),
+            UITabBarItem(title: "Categories", image: UIImage(named: "category"), selectedImage: UIImage(named: "category")),
+            UITabBarItem(tabBarSystemItem: .history, tag: 0),
             UITabBarItem(title: "Profile", image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile"))
         ]
         
@@ -47,6 +47,34 @@ class TabBarVCs: UITabBarController {
         }
         
         viewControllers = viewControllerArray
+    }
+    
+    private func setUpNavBar() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddItem(_:)))
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = self.editButtonItem
+    }
+        
+     @objc func pressAddItem(_ sender: UIBarButtonItem) {
+        let addItemVC = AddItemVC()
+        let navigationController = UINavigationController(rootViewController: addItemVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+     }
+     
+     @objc func openNextScene(){
+        let detailVC = CartItemDetailVC()
+         self.navigationController?.pushViewController(detailVC, animated: true)
+     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if(viewController.isKind(of: CartVC.self)){
+            setUpNavBar()
+        }else{
+            navigationItem.rightBarButtonItem = nil
+            navigationItem.leftBarButtonItem = nil
+        }
+    }
         
         
 //        let homeVC: HomeVC = {
@@ -83,25 +111,4 @@ class TabBarVCs: UITabBarController {
 ////        viewControllers = [home, purchaseHistory]
 //        viewControllers = [homeVC, purchaseHistoryVC, categoriesVC]
 //
-    }
-    
-    private func setUpNavBar() {
-           title = "Cart"
-           let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pressAddItem(_:)))
-           navigationItem.rightBarButtonItem = addButton
-           navigationItem.leftBarButtonItem = self.editButtonItem
-       }
-       
-       @objc func pressAddItem(_ sender: UIBarButtonItem) {
-        let addItemVC = AddItemVC()
-           let navigationController = UINavigationController(rootViewController: addItemVC)
-           navigationController.modalPresentationStyle = .fullScreen
-           present(navigationController, animated: true, completion: nil)
-       }
-    
-    @objc func openNextScene(){
-        let detailVC = CartItemDetailVC()
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
 }

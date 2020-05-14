@@ -22,8 +22,8 @@ class SwipeVC: UIViewController, UICollectionViewDelegateFlowLayout {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = pages.count
-        pc.currentPageIndicatorTintColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
-        pc.pageIndicatorTintColor = UIColor(red: 0/255, green: 93/255, blue: 94/255, alpha: 1.0)
+        pc.currentPageIndicatorTintColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        pc.pageIndicatorTintColor = UIColor(red: 0/255, green: 72/255, blue: 70/255, alpha: 1.0)
         return pc
     }()
     
@@ -32,18 +32,19 @@ class SwipeVC: UIViewController, UICollectionViewDelegateFlowLayout {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
+
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView?.backgroundColor = .white
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView?.isPagingEnabled = true
         collectionView.reloadData()
         
         self.view.addSubview(collectionView)
         
         setUpBottomControls()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     fileprivate func setUpBottomControls() {
@@ -61,14 +62,9 @@ class SwipeVC: UIViewController, UICollectionViewDelegateFlowLayout {
         ])
     }
     
-    private func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let x = targetContentOffset.pointee.x
-        pageControl.currentPage = Int(x / view.frame.width)
-    }
-    
     @objc func continueButtonTapped() {
         let nextVc = LogInVC()
-        self.navigationController?.initRootViewController(vc: nextVc)
+        self.navigationController?.initRootViewController(vc: nextVc, navBarHidden: true)
     }
 }
 

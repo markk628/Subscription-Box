@@ -10,21 +10,35 @@ import UIKit
 
 class PurchaseHistoryDetailVC: UIViewController {
     
+    let boxItemImage: [UIImage] = [#imageLiteral(resourceName: "food.png"), #imageLiteral(resourceName: "drop.png"), #imageLiteral(resourceName: "game.png"), #imageLiteral(resourceName: "pill.png")]
+    let boxArray: [String] = ["Steak", "Water", "COD Warzone", "pain killers"]
+    
+    private let table: UITableView = {
+        let table = UITableView()
+        table.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        table.rowHeight = 100
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        
+        setItemsTable()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setItemsTable() {
+        view.addSubview(table)
+        NSLayoutConstraint.activate([
+            table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            table.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+        ])
+        
+        table.register(PurchaseHistoryDetailTableViewCell.self, forCellReuseIdentifier: PurchaseHistoryDetailTableViewCell.identifier)
+        table.delegate = self
+        table.dataSource = self
     }
-    */
-
 }

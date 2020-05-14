@@ -38,6 +38,7 @@ class ConfirmItemVC: UIViewController {
         addItemBtn.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
         addItemBtn.setTitle("Add Item", for: UIControl.State.normal)
         addItemBtn.setTitleColor(UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0), for: UIControl.State.normal)
+        addItemBtn.addTarget(self, action: #selector(addItemButtonTapped(_:)), for: .touchUpInside)
         addItemBtn.translatesAutoresizingMaskIntoConstraints = false
         return addItemBtn
     }()
@@ -45,6 +46,7 @@ class ConfirmItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
+        view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +79,7 @@ class ConfirmItemVC: UIViewController {
             addItemButton.heightAnchor.constraint(equalToConstant: 50),
             addItemButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             addItemButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            addItemButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 30),
+            addItemButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
         ])
     }
     

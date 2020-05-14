@@ -10,6 +10,8 @@ import UIKit
 
 class PurchaseHistoryTableViewCell: UITableViewCell {
     
+    static let identifier = "PurchaseHistoryCell"
+    
     private let background: UIView = {
         let background = UIView()
         background.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)

@@ -34,7 +34,7 @@ class PurchaseHistoryVC: UIViewController {
             table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
         
-        table.register(PurchaseHistoryTableViewCell.self, forCellReuseIdentifier: "MonthCell")
+        table.register(PurchaseHistoryTableViewCell.self, forCellReuseIdentifier: PurchaseHistoryTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
     }

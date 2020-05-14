@@ -33,7 +33,7 @@ class CategoriesVC: UIViewController, UICollectionViewDelegateFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
-        collectionView = UICollectionView(frame: view.bounds,    collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView?.backgroundColor = .white
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: "categoryId")
         collectionView?.delegate = self
@@ -59,11 +59,6 @@ class CategoriesVC: UIViewController, UICollectionViewDelegateFlowLayout {
             bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             bottomControls.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
-    }
-    
-    private func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let x = targetContentOffset.pointee.x
-        categoryControl.currentPage = Int(x / view.frame.width)
     }
     
     @objc func viewItemsButtonTapped() {

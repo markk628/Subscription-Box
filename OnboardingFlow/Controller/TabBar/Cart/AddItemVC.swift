@@ -25,12 +25,14 @@ class AddItemVC: UIViewController {
     
     let itemImages = Item.Images.allCases
     
-    private let collectionView: UICollectionView = {
-        let collectonView = UICollectionView()
-        collectonView.translatesAutoresizingMaskIntoConstraints = false
-        return collectonView
+    var collectionView: UICollectionView = {
+        let addItemVC = UIView()
+        let collectionView = UICollectionView(frame: addItemVC.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.reloadData()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
-    
+        
     private let pickPhotoButton: UIButton = {
         let pickPhotoButton = UIButton()
         pickPhotoButton.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
@@ -39,24 +41,43 @@ class AddItemVC: UIViewController {
         pickPhotoButton.translatesAutoresizingMaskIntoConstraints = false
         return pickPhotoButton
     }()
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    override func loadView() {
+        super.loadView()
+        title = "New Box"
         collectionView.register(CartItemImageCollectionViewCell.self, forCellWithReuseIdentifier: CartItemImageCollectionViewCell.identifier)
         setUpItemLayout()
         setUpNavBar()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        pickPhotoButton.addTarget(self, action: #selector(pickPhotoButtonPressed), for: .touchUpInside)
+
     }
     
     private func setUpItemLayout() {
         view.addSubview(collectionView)
         view.addSubview(pickPhotoButton)
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+//            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+//            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+//            collectionView.bottomAnchor.constraint(equalTo: pickPhotoButton.topAnchor, constant: -15),
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            collectionView.bottomAnchor.constraint(equalTo: pickPhotoButton.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: pickPhotoButton.topAnchor, constant: -15),
+            
+            pickPhotoButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            pickPhotoButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            pickPhotoButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
         ])
     }
     
@@ -72,9 +93,9 @@ class AddItemVC: UIViewController {
     }
     
     @objc func pickPhotoButtonPressed() {
-       guard let selectedIndexPath = selectedIndexPath else { return }
-       let confirmItemVC = ConfirmItemVC()
-       confirmItemVC.itemImage = itemImages[selectedIndexPath.row]
+        guard let selectedIndexPath = selectedIndexPath else { return }
+        let confirmItemVC = ConfirmItemVC()
+        confirmItemVC.itemImage = itemImages[selectedIndexPath.row]
        navigationController?.pushViewController(confirmItemVC, animated: true)
    }
 }

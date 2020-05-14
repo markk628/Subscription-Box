@@ -12,6 +12,8 @@ class HomeVC: UIViewController {
     
     var collectionView: UICollectionView!
     
+    var favorites: [Item] = []
+    
     lazy var sections: [Section] = [
         TitleSection(title: "Featured"),
         FeaturedSection(),
@@ -30,6 +32,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
