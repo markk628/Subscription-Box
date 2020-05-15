@@ -25,7 +25,7 @@ class PageCell: UICollectionViewCell {
     }
     
     private let imageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "BBQ.png"))
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView

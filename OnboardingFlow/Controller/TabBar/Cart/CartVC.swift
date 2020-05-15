@@ -34,7 +34,6 @@ class CartVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         persistence.setNeedsToReloadItems()
         table.reloadData()
     }

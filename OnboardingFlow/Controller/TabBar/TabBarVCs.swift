@@ -64,7 +64,7 @@ class TabBarVCs: UITabBarController, UITabBarControllerDelegate {
      
      @objc func openNextScene(){
         let detailVC = CartItemDetailVC()
-         self.navigationController?.pushViewController(detailVC, animated: true)
+        self.navigationController?.pushViewController(detailVC, animated: true)
      }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

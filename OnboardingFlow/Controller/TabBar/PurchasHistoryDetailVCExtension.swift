@@ -16,7 +16,7 @@ extension PurchaseHistoryDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PurchaseHistoryDetailTableViewCell.identifier, for: indexPath) as! PurchaseHistoryDetailTableViewCell
-        //cell.textLabel?.text = "\(boxArray[indexPath.row])"
+        cell.textLabel?.text = "\(boxArray[indexPath.row])"
         cell.textLabel?.textColor = UIColor(red: 0/255, green: 62/255, blue: 70/255, alpha: 1.0)
         cell.imageView?.image = boxItemImage[indexPath.row]
         return cell

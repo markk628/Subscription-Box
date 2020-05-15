@@ -33,11 +33,8 @@ class CartTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         setUpLayout()
     }
-    
-    
     
     private func setUpLayout() {
         self.addSubview(imageViewIcon)
@@ -45,17 +42,16 @@ class CartTableViewCell: UITableViewCell {
         self.addSubview(quantity)
         NSLayoutConstraint.activate([
             imageViewIcon.widthAnchor.constraint(equalTo: imageViewIcon.heightAnchor),
-            imageViewIcon.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            imageViewIcon.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            imageViewIcon.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            imageViewIcon.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
+            imageViewIcon.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            imageViewIcon.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             
-            itemName.widthAnchor.constraint(equalToConstant: 133),
             itemName.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            itemName.leadingAnchor.constraint(equalTo: imageViewIcon.trailingAnchor),
+            itemName.leadingAnchor.constraint(equalTo: imageViewIcon.trailingAnchor, constant: 10),
             itemName.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
             quantity.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            quantity.leadingAnchor.constraint(equalTo: itemName.trailingAnchor),
+            quantity.leadingAnchor.constraint(equalTo: itemName.trailingAnchor, constant: 10),
             quantity.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             quantity.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
         ])
