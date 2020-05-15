@@ -37,7 +37,7 @@ class PurchaseHistoryDetailTableViewCell: UITableViewCell {
     private var favoriteButton: UIButton = {
         let favBtn = UIButton()
         favBtn.setImage(UIImage(named: "fav"), for: .normal)
-        favBtn.imageView?.backgroundColor = .white
+        favBtn.backgroundColor = .white
         favBtn.translatesAutoresizingMaskIntoConstraints = false
         return favBtn
     }()
@@ -92,7 +92,12 @@ class PurchaseHistoryDetailTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    @objc func addToFavorites() {
-        favoriteButton.imageView?.backgroundColor = .yellow
+    @objc func addToFavorites(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        if favoriteButton.isSelected {
+            favoriteButton.backgroundColor = .yellow
+        } else {
+            favoriteButton.backgroundColor = .white
+        }
     }
 }

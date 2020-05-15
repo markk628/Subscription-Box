@@ -43,6 +43,7 @@ class CartItemDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setUpCartItemDetailLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,8 +64,19 @@ class CartItemDetailVC: UIViewController {
             imageViewIcon.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             
             itemName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            itemName.widthAnchor.constraint(equalToConstant: 240),
+            itemName.heightAnchor.constraint(equalToConstant: 35),
             itemName.topAnchor.constraint(equalTo: imageViewIcon.bottomAnchor, constant: 30),
             
+            addedDate.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addedDate.widthAnchor.constraint(equalToConstant: 240),
+            addedDate.heightAnchor.constraint(equalToConstant: 35),
+            addedDate.topAnchor.constraint(equalTo: itemName.bottomAnchor, constant: 10),
+            
+            itemDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            itemDescription.widthAnchor.constraint(equalToConstant: 260),
+            itemDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 35),
+            itemDescription.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
         ])
     }
     
