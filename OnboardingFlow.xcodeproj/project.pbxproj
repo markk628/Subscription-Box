@@ -118,9 +118,9 @@
 				FE6207D924526D1000C4A9F3 /* TitleCell.swift */,
 				FE09987724521DE9000D003B /* FeaturedCell.swift */,
 				FE6207DB2452782600C4A9F3 /* FavoritesCell.swift */,
+				FE757E4D245653EB00C36805 /* CategoryCell.swift */,
 				FE5E470B244C199400D67295 /* PurchaseHistoryTableViewCell.swift */,
 				FE7E80A124612EF400223A47 /* PurchaseHistoryDetailTableViewCell.swift */,
-				FE757E4D245653EB00C36805 /* CategoryCell.swift */,
 				FE6B9FA024621531009E47E5 /* CartTableViewCell.swift */,
 				FEF458EE2467835300171F3E /* CartItemImageCollectionViewCell.swift */,
 			);

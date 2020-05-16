@@ -15,14 +15,17 @@ class FavoritesCell: UICollectionViewCell {
     private let favoritesView: UIImageView = {
         let favView = UIImageView()
         favView.layer.cornerRadius = 10
-        favView.backgroundColor = .blue
+        favView.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        favView.image = UIImage(named: "food")
         favView.translatesAutoresizingMaskIntoConstraints = false
         return favView
     }()
     
     private let itemLabel: UILabel = {
         let itemName = UILabel()
-        itemName.text = "Item Name"
+        itemName.text = "Steak"
+//        itemName.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        itemName.textColor = UIColor(red: 0/255, green: 72/255, blue: 70/255, alpha: 1.0)
         itemName.translatesAutoresizingMaskIntoConstraints = false
         return itemName
     }()

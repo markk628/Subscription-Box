@@ -14,10 +14,21 @@ class FeaturedCell: UICollectionViewCell {
     
     private let imgView: UIImageView = {
         let img = UIImageView()
-        img.backgroundColor = .blue
+        img.backgroundColor = UIColor(red: 0/255, green: 224/255, blue: 199/255, alpha: 1.0)
+        img.image = UIImage(named: "food")
         img.layer.cornerRadius = 10.0
+        img.contentMode = .center
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
+    }()
+    
+    private let itemName: UILabel = {
+        let itemName = UILabel()
+        itemName.textAlignment = .center
+        itemName.textColor = UIColor(red: 0/255, green: 72/255, blue: 70/255, alpha: 1.0)
+        itemName.text = "Steak"
+        itemName.translatesAutoresizingMaskIntoConstraints = false
+        return itemName
     }()
     
     override init(frame: CGRect) {
@@ -31,12 +42,19 @@ class FeaturedCell: UICollectionViewCell {
     
     private func setUpLayout() {
         addSubview(imgView)
+        addSubview(itemName)
         
         NSLayoutConstraint.activate([
             imgView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             imgView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             imgView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             imgView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            
+            itemName.heightAnchor.constraint(equalToConstant: 35),
+            itemName.topAnchor.constraint(equalTo: imgView.centerYAnchor, constant: 30),
+            itemName.leadingAnchor.constraint(equalTo: imgView.leadingAnchor, constant: 30),
+            itemName.trailingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: -30),
+            
         ])
     }
 }

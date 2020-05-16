@@ -24,20 +24,22 @@ class CartItemDetailVC: UIViewController {
     
     private let itemName: UILabel = {
         let itemName = UILabel()
+        itemName.textAlignment = .center
         itemName.translatesAutoresizingMaskIntoConstraints = false
         return itemName
+    }()
+    
+    private let addedDate: UILabel = {
+        let addedDate = UILabel()
+        addedDate.textAlignment = .center
+        addedDate.translatesAutoresizingMaskIntoConstraints = false
+        return addedDate
     }()
     
     private let itemDescription: UILabel = {
         let itemDescription = UILabel()
         itemDescription.translatesAutoresizingMaskIntoConstraints = false
         return itemDescription
-    }()
-    
-    private let addedDate: UILabel = {
-        let addedDate = UILabel()
-        addedDate.translatesAutoresizingMaskIntoConstraints = false
-        return addedDate
     }()
     
     override func viewDidLoad() {
@@ -76,7 +78,7 @@ class CartItemDetailVC: UIViewController {
             itemDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             itemDescription.widthAnchor.constraint(equalToConstant: 260),
             itemDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 35),
-            itemDescription.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+            itemDescription.topAnchor.constraint(equalTo: addedDate.bottomAnchor, constant: 10)
         ])
     }
     
